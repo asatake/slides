@@ -1,0 +1,249 @@
+<!--
+slidedeck: A modification of the Google IO 2012 HTML5 slide template
+URL: https://github.com/rmcgibbo/slidedeck
+
+Based on https://github.com/francescolaffi/elastic-google-io-slides, and
+ultimately:
+
+Google IO 2012 HTML5 Slide Template
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahe <lukem@google.com>
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title> ComputerCraftを楽しむ</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="all" href="theme/css/custom.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides", src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.14/require.min.js"></script>
+
+
+  <!-- MathJax support  -->
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    showProcessingMessages: false,
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    TeX: {
+      extensions: ["color.js"]
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+  </script>
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <div style="display:hidden">
+  \[
+    \definecolor{data}{RGB}{18,110,213}
+    \definecolor{unknown}{RGB}{217,86,16}
+    \definecolor{learned}{RGB}{175,114,176}
+  \]
+  </div>
+
+</head>
+
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+<slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+
+    <h1> ComputerCraftを楽しむ</h1>
+    <h2> luaで友達をつくる</h2>
+    <p> まのめっち<br/> </p>
+  </hgroup>
+</slide>
+
+
+<slide class="img-top-center" >
+  
+    <hgroup>
+      <h2>自己紹介</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p><img alt="勘違いにもほどがある" src="happo.png" /></p>
+<ul class="build">
+<li>まのめっち</li>
+<li>13RD</li>
+<li>作曲もやってるよ</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>本題</h2>
+      <h3>ComputerCraftってなに？</h3>
+    </hgroup>
+    <article ><p><img alt="こんなん" src="cc1.png" /></p>
+<ul class="build">
+<li>MinecraftのMOD</li>
+<li>いわゆる工業化MOD</li>
+<li>コンピュータをつくって色々できる</li>
+<li>プログラムを書くことで好みの動作をつくれる</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>できること</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul class="build">
+<li>採掘・整地の自動化</li>
+<li>農地の管理</li>
+<li>モニターを使ってのあれこれ表示</li>
+<li>
+<p>GUIもつくれる</p>
+</li>
+<li>
+<p><b>これらを組み合わせてゲームも作れちゃう！</b></p>
+</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>仲間たち</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p><img alt="壮観である" src="cc2.png" /></p>
+<p>タートル(turtle)・コンピュータ・ディスクドライブ</p></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>おすすめポイント</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul class="build">
+<li>便利</li>
+<li>名前がをつけられる</li>
+<li>かわいい</li>
+<li>プログラミングの勉強にもなる</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>コード紹介</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p>言語はlua<br />
+ただひたすら高さ2でまっすぐ掘るだけのプログラム</p></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2></h2>
+      <h3></h3>
+    </hgroup>
+    <article ><pre class="prettyprint" data-lang="lua">
+function mine(length)
+  -- 掘って
+  <b>for i = 1, length do
+    turtle.dig()   -- 正面を掘る
+    turtle.forward()  -- 正面に進む
+    turtle.digUp()  -- 真上を掘る
+  end</b>
+  -- 戻ってくる
+  turtle.turnRight()  -- 右に90°回る
+  turtle.turnRight()  -- もう一回
+  for i = 1, length do
+    turtle.forward()
+  end
+  -- アイテムをドロップする
+  for i = 0, 16 do  -- スロットが16あるので16回ループ
+    turtle.select(i)  -- スロット選択
+    turtle.drop()  -- アイテムをポイする
+  end
+  turtle.turnRight()  -- 元の方向に
+  turtle.turnRight()  -- 戻す
+end
+
+args = {...}  -- 引数を入れる
+mine(args[1])  -- 実行
+</pre></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>実際に動かすとこんな感じ</h2>
+      <h3></h3>
+    </hgroup>
+    <article ></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>教育アプリとして</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p><img alt="教育にも使われてるね" src="ccedu1.png" /></p>
+<hr /></article>
+ 
+</slide>
+
+
+<slide class="thank-you-slide segue nobackground">
+  <!-- <aside class="gdbar right"><img src="images/google_developers_icon_128.png"></aside> -->
+  <article class="flexbox vleft auto-fadein">
+    <h2> ご清聴ありがとうございました</h2>
+    <p> And especially these people:</p>
+  </article>
+  <p data-config-contact class="auto-fadein"> <span>Twitter</span> Mano_tetsu<br/> <span>github</span> <a href="http://github.com">asatake</a></p>
+  </p>
+</slide>
+
+<slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
