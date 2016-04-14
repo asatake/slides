@@ -143,7 +143,7 @@
 
    h2: {fontsize:'120%', textAlign:'center', margin:'30% auto'}
 
-デモページ: https://asatake.github.io/slides/pmobLT02/_prog/01.html
+デモページ:
 
 .. s6:: styles
 
