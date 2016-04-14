@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>主人公の名前で要件定義</title>
+        <script type="text/javascript" src='random_name.js'></script>
+    </head>
+    <body>
+        <h1>主人公の名前で要件定義</h1>
+
+        <p>最初</p>
+        <input type="button" value="CREATE" onclick="OnButtonClick01();"/>
+        <br/>
+        <br/>
+
+        <p>修正1</p>
+        <form name="form1" id="id_form1" action="">
+            文字数
+            <input name="textBox1" id="id_textBox" type="text" value=""/>
+            <input type="button" value="CREATE" onclick="OnButtonClick02();"/>
+        </form>
+        <br/>
+
+        <p>修正2</p>
+        <form name="form1" id="id_form2" action="">
+            文字数
+            <input name="textBox2" id="id_textBox" type="text" value=""/>
+            <input type="button" value="CREATE" onclick="OnButtonClick03();"/>
+        </form>
+        <br/>
+
+        <p>修正3</p>
+        <form name="form1" id="id_form3" action="">
+            文字数
+            <input name="textBox3" id="id_textBox" type="text" value=""/>
+            <input type="button" value="CREATE" onclick="OnButtonClick04();"/>
+        </form>
+        <br/>
+        -----------------------------------
+        <div id="output" style="font-size: 30px"></div>
+        <br/>
+        <br/>
+    </body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>主人公の名前から学ぶ要件定義</title>
+    
+    <link rel="stylesheet" href="_static/s6.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/jquery.touchwipe.min.js"></script>
+    <script type="text/javascript" src="_static/s6.js"></script>
+    <script type="text/javascript" src="_static/s6-sphinx.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
+        <li class="nav-item nav-item-0"><a href="#">pmobLT160414 0.1 ドキュメント</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>主人公の名前から学ぶ要件定義<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="id2">
+<h2>自己紹介<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li><s>水牛のメスに跨るおやじっち</s></li>
+<li>まのめっち</li>
+<li>13RD</li>
+<li>曲も作ります</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>要件定義とは<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>システム・ソフトウェアの開発をするとき</p>
+<p>必要な機能とか性能を明確にする作業</p>
+<script>
+if(typeof s6 != 'undefined'){s6.page({styles: {'p': {display:'none'}}});}</script>
+<script>
+if(typeof s6 != 'undefined'){s6.page({actions: [['p', 'fade in', '0.3']]});}</script>
+</div>
+<div class="section" id="id4">
+<h2>テーマ<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>顧客「主人公の名前を自動生成するツール作ってくれ」</p>
+<script>
+if(typeof s6 != 'undefined'){s6.page({styles: {'p': {display:'none'}}});}</script>
+<script>
+if(typeof s6 != 'undefined'){s6.page({actions: [['p', 'fade in', '0.3']]});}</script>
+</div>
+<div class="section" id="id5">
+<h2>というわけで<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<script>
+if(typeof s6 != 'undefined'){s6.page({styles: {h2: {fontsize:'120%', textAlign:'center', margin:'30% auto'}}});}</script>
+</div>
+<div class="section" id="id6">
+<h2>作りました<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>まず最初にこんなの(デモ)</p>
+</div>
+<div class="section" id="id7">
+<h2>苦情1<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li>2文字以外にも対応させて</li>
+<li>名前の最後が全部ンなのは不自然でしょ</li>
+<li>文字数指定させて</li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h2>修正1<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li>複数文字にも対応</li>
+<li>文字数を指定できるように</li>
+</ul>
+<p>(デモ)</p>
+</div>
+<div class="section" id="id9">
+<h2>苦情2<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li>ンとか小文字から始まるときがある</li>
+<li>これじゃ呪文だよ</li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h2>修正2<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li>ンなどから始まらないように</li>
+<li>呪文じゃないようにした</li>
+</ul>
+<p>(デモ)</p>
+</div>
+<div class="section" id="id11">
+<h2>苦情3<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li>長くなると息が続かない</li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h2>修正3<a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li>長いときは途中に「・」を挟むようにする</li>
+</ul>
+<p>(デモは即席なのでガバってます)</p>
+</div>
+<div class="section" id="id13">
+<h2>要するに<a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>より良いものを作るには...</p>
+<p>依頼側と開発側の意思疎通大事</p>
+<script>
+if(typeof s6 != 'undefined'){s6.page({styles: {'p': {display:'none'}}});}</script>
+<script>
+if(typeof s6 != 'undefined'){s6.page({actions: [['p', 'fade in', '0.3']]});}</script>
+</div>
+<div class="section" id="id14">
+<h2>さらに<a class="headerlink" href="#id14" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li>相手の必要とする機能を見極める能力</li>
+<li>それを正しく実装する力</li>
+</ul>
+</div>
+<div class="section" id="id15">
+<h2>さいごに<a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li>趣味の製作でも</li>
+<li>仕事でも</li>
+</ul>
+<p>仕様はちゃんと定めよう!(ブーメラン)</p>
+<script>
+if(typeof s6 != 'undefined'){s6.page({styles: {'p': {display:'none'}}});}</script>
+<script>
+if(typeof s6 != 'undefined'){s6.page({actions: [['p', 'fade in', '0.3']]});}</script>
+</div>
+<div class="section" id="id16">
+<h2>ありがとうございました<a class="headerlink" href="#id16" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<script>
+if(typeof s6 != 'undefined'){s6.page({styles: {h2: {fontsize:'120%', textAlign:'center', margin:'30% auto'}}});}</script>
+<p>デモページ: <a class="reference external" href="https://asatake.github.io/slides/pmobLT02/_prog/01.html">https://asatake.github.io/slides/pmobLT02/_prog/01.html</a></p>
+<script>
+if(typeof s6 != 'undefined'){s6.page({styles: {'p': {fontsize: '100%', margin: '-20% auto'}}});}</script>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             >索引</a></li>
+        <li class="nav-item nav-item-0"><a href="#">pmobLT160414 0.1 ドキュメント</a> &raquo;</li> 
+      </ul>
+    </div>
+<div class="footer">
+    <span>主人公の名前から学ぶ要件定義 :: 2016, asatake</span><br />
+    <span class="hidden">操作方法: 上下左右キーで操作です</span>
+</div>
+
+  </body>
+</html>
